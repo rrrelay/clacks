@@ -1,8 +1,6 @@
 var cheerio = require('cheerio'),
 	cssRewriter = require('./../css/index'),
-	jsRewriter = require('./../js/index'),
-	injectors = require('./injectors')
-	;
+	jsRewriter = require('./../js/index');
 
 module.exports = function(html, context) {
 	var $ = cheerio.load(html),
@@ -43,7 +41,6 @@ module.exports = function(html, context) {
 		$this.attr('style', newContent);
 	});
 
-	injectors($, context);
 
 	return $.html();
 };
