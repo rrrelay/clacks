@@ -52,6 +52,7 @@ var Convertor = function(request){
 	absolurl.on('error', self.emit.bind(self, 'error'));
 
 	var requestUrl = _getRequestUrl(request);
+	var datum = request.datum;
 	console.log(requestUrl);
 	var isClientConnectionSecure = _isClientConnectionSecure(request);
 	var isHttpDowngrade = isClientConnectionSecure && !/^https/.test(requestUrl);
@@ -75,7 +76,9 @@ var Convertor = function(request){
 		// 	clacksHomeUrl = httpsBaseUrl;
 		// }
 
-		return clacksHomeUrl + internetUrl ;
+		//console.log('$$$$$$$$$$$$'  + clacksHomeUrl);
+		//return clacksHomeUrl +  internetUrl ;
+		return clacksHomeUrl + datum +'/'+  internetUrl ;
 	};
 
 	this.fromProxyUrl = function(myUrl){

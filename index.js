@@ -22,12 +22,15 @@ module.exports = function(req, res, next){
 	req.pipe(request);
 
 	request.on('error', function(e){
+		console.log('errrr');
 		res.writeHead(302,{location: '/500.html?message=' + encodeURIComponent(e.message)} );
 		res.end();
 	});
 
 	request.on('ready', function(response){
+		console.log('ereaddydasdfdasfdsfadsfadsfadsf');
 		response.on('headers', function(statusCode, headers){
+			console.log('writering headers');
 			res.writeHead(statusCode, headers.toObject());
 		});
 

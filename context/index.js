@@ -61,6 +61,8 @@ var Context = function(request, response){
 
 	oTargetUrl = url.parse(targetUrl);
 
+	// ah man, you know..
+	this.extraCookies = request.extraCookies;
 
 	this.client =  {
 		id: _id(request, response),
