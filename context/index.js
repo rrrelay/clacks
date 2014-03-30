@@ -8,17 +8,27 @@ var url = require('url'),
 	watch = require('nostalgorithm').watch;
 
 function _id(request, response){
+	console.log('2.1');
+	if (!request.signedCookies) return uuid.v4();
+	console.log('2.11111');
 	var id = request.signedCookies[settings.idCookieName];
 
+	console.log('2.2222');
 	if (id) return id;
+console.log('2.3333');
 
 	id = uuid.v4();
-	response.cookie(settings.idCookieName, id, {signed: true});
+	console.log('2.44444');
+	if (response.cookie){
+		//response.cookie(settings.idCookieName, id, {signed: true});
 
+	}
+	console.log('2.2');
 	return id;
 }
 
 function _isClientConnectionSecure(req){
+	console.log('hey');
 	if (!req) return false;
 
 	return settings.isProduction? req.headers['x-forwarded-proto'] == 'https' : req.secure;

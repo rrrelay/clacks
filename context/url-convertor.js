@@ -33,6 +33,7 @@ var Convertor = function(request){
 
 
 	function _getRequestUrl(request){
+
 		var conversionOptions =_createAbsolurlDefaults(request); 
 		var requestUrl = request ? request.url.substr(1) : null;
 		var refererUrl = request && request.headers ? request.headers.referer : null;
@@ -51,6 +52,7 @@ var Convertor = function(request){
 	absolurl.on('error', self.emit.bind(self, 'error'));
 
 	var requestUrl = _getRequestUrl(request);
+	console.log(requestUrl);
 	var isClientConnectionSecure = _isClientConnectionSecure(request);
 	var isHttpDowngrade = isClientConnectionSecure && !/^https/.test(requestUrl);
 
@@ -68,14 +70,16 @@ var Convertor = function(request){
 		if (!internetUrl) return internetUrl;
 		if (!_shouldProxy(internetUrl)) return internetUrl;
 
-		if (/^https/.test(internetUrl) || isHttpDowngrade) {
-			clacksHomeUrl = httpsBaseUrl;
-		}
+		// whatever man
+		// if (/^https/.test(internetUrl) || isHttpDowngrade) {
+		// 	clacksHomeUrl = httpsBaseUrl;
+		// }
 
 		return clacksHomeUrl + internetUrl ;
 	};
 
 	this.fromProxyUrl = function(myUrl){
+
 		if (myUrl === undefined) return requestUrl;
 		if (!myUrl) return null;
 

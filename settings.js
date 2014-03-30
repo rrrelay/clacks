@@ -21,7 +21,7 @@ o.createHttpsUrl = function(){
 		hostname: o.hostname,
 		protocol: 'https:',
 		slashes: true,
-		pathname:'/'
+		pathname:'/proxy/'
 	});
 };
 o.createHttpUrl = function(){
@@ -30,7 +30,7 @@ o.createHttpUrl = function(){
 		hostname: o.hostname,
 		protocol: 'http:',
 		slashes: true,
-		pathname:'/'
+		pathname:'/proxy/'
 	});
 };
 

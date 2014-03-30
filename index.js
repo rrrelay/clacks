@@ -1,4 +1,4 @@
-var Context = require('../context/'),
+var Context = require('./context/'),
 	TranslatedRequest = require('./request');
 
 module.exports = function(req, res, next){
@@ -13,7 +13,6 @@ module.exports = function(req, res, next){
 	if (url !== ctx.target.url){
 		return res.redirect(302, ctx.convert.toProxyUrl(ctx.target.url));
 	}
-
 	var request = new TranslatedRequest(ctx, {
 		url: ctx.target.url,
 		method: req.method,
