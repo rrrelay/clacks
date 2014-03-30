@@ -8,22 +8,16 @@ var url = require('url'),
 	watch = require('nostalgorithm').watch;
 
 function _id(request, response){
-	console.log('2.1');
 	if (!request.signedCookies) return uuid.v4();
-	console.log('2.11111');
 	var id = request.signedCookies[settings.idCookieName];
 
-	console.log('2.2222');
 	if (id) return id;
-console.log('2.3333');
 
 	id = uuid.v4();
-	console.log('2.44444');
 	if (response.cookie){
 		//response.cookie(settings.idCookieName, id, {signed: true});
 
 	}
-	console.log('2.2');
 	return id;
 }
 
