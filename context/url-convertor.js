@@ -71,10 +71,9 @@ var Convertor = function(request){
 		if (!internetUrl) return internetUrl;
 		if (!_shouldProxy(internetUrl)) return internetUrl;
 
-		// whatever man
-		// if (/^https/.test(internetUrl) || isHttpDowngrade) {
-		// 	clacksHomeUrl = httpsBaseUrl;
-		// }
+		if (/^https/.test(internetUrl) || isHttpDowngrade) {
+			clacksHomeUrl = httpsBaseUrl;
+		}
 
 		//console.log('$$$$$$$$$$$$'  + clacksHomeUrl);
 		//return clacksHomeUrl +  internetUrl ;
