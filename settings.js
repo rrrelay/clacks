@@ -1,7 +1,7 @@
 var url = require('url');
 
 var o = {
-  hostname: process.env.MT3_hostname || 'admin.miketown3.com',
+  hostname: process.env.MT3_hostname || 'admin.rrelay.com',
   port: process.env.MT3_port || 80,
   sslPort: process.env.MT3_sslPort || 443,
   forceSsl: true,
