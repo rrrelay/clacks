@@ -19,8 +19,6 @@
     "node-uuid": "~1.4.x",
     "express": ">=3.4.7",
     "concat-stream": "~1.x.x",
-    "redis": "~0.10.x",
-    "hiredis": "~0.1.x",
     "esprima": "~1.0.4",
     "escodegen": "~1.x.x",
     "traverse": "~0.6.5",
